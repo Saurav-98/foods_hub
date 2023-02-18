@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 const NavBar = () => {
+  const [showSideBar, setShowSideBar] = useState(false);
   return (
     <nav className="navbar container">
       <a href="#!" className="logo">
@@ -13,7 +14,10 @@ const NavBar = () => {
         <a href="#!">Recipes</a>
         <a href="#!">Settings</a>
       </div>
-      <div className="sidebar-btn">
+      <div
+        onClick={() => setShowSideBar((prev) => !prev)}
+        className={showSideBar ? "sidebar-btn active" : "sidebar-btn"}
+      >
         <div className="bar"></div>
         <div className="bar"></div>
         <div className="bar"></div>
